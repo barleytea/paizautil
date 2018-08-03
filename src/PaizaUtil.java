@@ -49,7 +49,7 @@ public class PaizaUtil {
         }
     }
 
-    public class FastScanner {
+    public static class FastScanner {
         private final InputStream in = System.in;
             private final byte[] buffer = new byte[1024];
         private int ptr = 0;
