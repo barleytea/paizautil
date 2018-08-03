@@ -50,12 +50,12 @@ public class PaizaUtil {
     }
 
     public static class FastScanner {
-        private final InputStream in = System.in;
-            private final byte[] buffer = new byte[1024];
-        private int ptr = 0;
-        private int buflen = 0;
+        private static final InputStream in = System.in;
+        private static final byte[] buffer = new byte[1024];
+        private static int ptr = 0;
+        private static int buflen = 0;
 
-        private boolean hasNextByte() {
+        private static boolean hasNextByte() {
             if (ptr < buflen) {
                 return true;
             } else {
@@ -70,9 +70,9 @@ public class PaizaUtil {
                 }
             }
             return true;
-            }
+        }
 
-            private int readByte() {
+        private static int readByte() {
             if (hasNextByte()) {
                 return buffer[ptr++];
             } else {
@@ -84,18 +84,18 @@ public class PaizaUtil {
             return 33 <= c && c <= 126;
         }
 
-        private void skipUnprintable() {
+        private static void skipUnprintable() {
             while (hasNextByte() && !isPrintableChar(buffer[ptr])) {
                 ptr++;
             }
         }
 
-        public boolean hasNext() {
+        public static boolean hasNext() {
             skipUnprintable();
             return hasNextByte();
         }
 
-        public String next() {
+        public static String next() {
             if (!hasNext()) {
             throw new NoSuchElementException();
             }
@@ -108,7 +108,7 @@ public class PaizaUtil {
             return sb.toString();
         }
 
-        public long nextLong() {
+        public static long nextLong() {
             if (!hasNext()) {
                 throw new NoSuchElementException();
             }
